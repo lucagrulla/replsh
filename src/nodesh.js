@@ -3,10 +3,10 @@ const { fork } = require('child_process');
 const readline = require('readline');
 const net = require('net');
 
-replStart = (outStream) => {
+replStart = (handler) => {
     let child = fork('./src/subRepl', [],
         { stdio: ['pipe', 'pipe', 'inherit', 'ipc'] })
-    // child.stdout.pipe(outStream);
+    child.stdout.on('data', handler)
     return child
 }
 __nodesh__start = () => {
@@ -17,10 +17,18 @@ __nodesh__start = () => {
         output: process.stdout
     });
 
+    let childDataHandler = (d) => {
+        console.log(d.toString())
+        rl.prompt()
+    }
+
     rl.on('line', (line) => {
         switch (line) {
             case "reload":
-                console.log("reload context")
+                console.log("reload context");
+                child.kill()
+                child = replStart(pchildDataHandler)
+                rl.prompt()
                 break;
             default:
                 child.stdin.write(line + '\n');//new line is necessary   
@@ -30,12 +38,8 @@ __nodesh__start = () => {
         chid.stdin.end()
     });
     rl.prompt()
-    child = replStart(process.stdout)
 
-    child.stdout.on('data', (d) => {
-        console.log(d.toString())
-        rl.prompt()
-    })
+    child = replStart(childDataHandler)
 }
 
 module.exports = { __nodesh__start: __nodesh__start }
