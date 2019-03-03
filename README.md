@@ -1,6 +1,7 @@
-# TODO
-## auto reload
-## use ENV
-## how to reload the express app?
+# Nodesh
 
-## child process for full stop/restart. pipe comms?
+A better REPL terminal for nodejs. 
+
+### TODO
+* auto reload
+* use ENV
