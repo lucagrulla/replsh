@@ -31,7 +31,7 @@ __replsh__loadContext = (conf, rootDir, replServer) => {
     }
 };
 
-const confName = '.replsh';
+const confName = '.nodesh';
 __replsh__start = (rootDir) => {
 
     // console.log("child process root Dir:", rootDir)
