@@ -1,0 +1,4 @@
+{
+    "dirs": ["lib"],
+    "files":["server"]
+}
