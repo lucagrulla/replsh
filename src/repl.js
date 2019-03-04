@@ -33,7 +33,6 @@ __replsh__loadContext = (conf, rootDir, replServer) => {
 
 const confName = '.nodesh';
 __replsh__start = (rootDir) => {
-
     // console.log("child process root Dir:", rootDir)
     let conf = {}
     if (fs.existsSync(confName)) {
@@ -48,34 +47,19 @@ __replsh__start = (rootDir) => {
     let replServer = repl.start({
         input: process.stdin,
         output: process.stdout,
-        prompt:'',
+        prompt:'>',
         ignoreUndefined: true
     })
 
-    // process.stdin.on('data', (d) => {
-    //     console.log("received>", d.toString())
-    // })
-
     __replsh__loadContext(conf, rootDir, replServer)
+ 
+    replServer.defineCommand('reload', () => {
+        process.send('reload');
+    });
 
-    // process.stdout.on('data', (d) => {
-    //     console.log(d.toString())
-    // })
-    // process.on('message', (m) => {
-    //     if (m == 'reload') {
-    //         console.log("reloading context")
-    //         replServer.resetContext()
-    //         __replsh__loadContext(conf, rootDir, replServer)
-    //     }
-    //     if (m == 'printContext') {
-    //         console.log(replServer.context)
-    //     }
-    // });
 
     replServer.on('exit', process.exit);
 }
-
-module.exports = { __replsh__start: __replsh__start }
 
 const rootDir = process.cwd()
 __replsh__start(rootDir)
