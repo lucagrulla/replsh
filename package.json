@@ -1,15 +1,17 @@
 {
   "name": "nodesh",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A better CLI for NodeJS",
+  "main": "lib/nodesh.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Luca Grulla",
   "license": "ISC",
   "bin": {
     "nodesh": "lib/nodesh.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
 }
