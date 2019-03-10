@@ -3,7 +3,7 @@
     "name": "Luca Grulla",
     "url": "https://www.lucagrulla.com"
   },
-  "name": "repljs",
+  "name": "replsh",
   "version": "0.0.1",
   "description": "A better CLI Repl for NodeJS",
   "keywords": [
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/lucagrulla/repljs.git"
+    "url": "git://github.com/lucagrulla/replsh.git"
   },
   "main": "lib/repljs.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "license": "Apache License 2.0",
   "bin": {
-    "repljs": "lib/repljs.js"
+    "repljs": "lib/replsh.js"
   },
   "dependencies": {
     "commander": "^2.19.0"
