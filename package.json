@@ -1,13 +1,24 @@
 {
+  "author": {
+    "name": "Luca Grulla",
+    "url": "https://www.lucagrulla.com"
+  },
   "name": "nodesh",
-  "version": "1.0.0",
-  "description": "A better CLI for NodeJS",
+  "version": "0.0.1",
+  "description": "A better CLI Repl for NodeJS",
+  "keywords": [
+    "cli",
+    "repl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lucagr‰ulla/nodesh.git"
+  },
   "main": "lib/nodesh.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Luca Grulla",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "bin": {
     "nodesh": "lib/nodesh.js"
   },
