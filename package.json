@@ -3,7 +3,7 @@
     "name": "Luca Grulla",
     "url": "https://www.lucagrulla.com"
   },
-  "name": "nodesh",
+  "name": "repljs",
   "version": "0.0.1",
   "description": "A better CLI Repl for NodeJS",
   "keywords": [
@@ -12,15 +12,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/lucagr‰ulla/nodesh.git"
+    "url": "git://github.com/lucagrulla/repljs.git"
   },
-  "main": "lib/nodesh.js",
+  "main": "lib/repljs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "Apache License 2.0",
   "bin": {
-    "nodesh": "lib/nodesh.js"
+    "repljs": "lib/repljs.js"
   },
   "dependencies": {
     "commander": "^2.19.0"
